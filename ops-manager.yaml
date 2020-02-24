@@ -4,12 +4,15 @@ kind: MongoDBOpsManager
 metadata:
   name: ops-manager
 spec:
-  replicas: 1
+  replicas: 2
   version: 4.2.4
   adminCredentials: ops-manager-admin-secret
 
   externalConnectivity:
     type: LoadBalancer
+
+  configuration:
+    mms.centralUrl: http://mongodb.blocksaas.io:8080
 
   # the application database backing Ops Manager. Replica Set is the only supported type
   # Application database has the SCRAM-SHA authentication mode always enabled
