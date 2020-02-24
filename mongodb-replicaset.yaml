@@ -1,0 +1,19 @@
+apiVersion: mongodb.com/v1
+kind: MongoDB
+metadata:
+  name: mongodb-replicaset
+  namespace: mongodb
+             # Must match metadata.namespace in ConfigMap file
+spec:
+
+  members: 3
+  version: 4.2.2
+
+  opsManager:
+    configMapRef:
+      name: project-configmap
+            # Must match metadata.name in ConfigMap file
+  credentials: k8s-operator-credentials
+  
+  type: ReplicaSet
+  persistent: true

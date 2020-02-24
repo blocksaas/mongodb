@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: project-configmap
+  namespace: mongodb
+
+data:
+  projectName: MongoReplicaSet 
+  orgId: 5e52f3b330c90d0071ef0b67  # Editar según la configuración en Ops Manager
+  baseUrl: http://ops-manager-svc.mongodb.svc.cluster.local:8080
